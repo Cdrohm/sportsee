@@ -1,9 +1,8 @@
-import logo from './logo.svg';
 import './styles/App.scss';
-import { useEffect, useState } from "react";
-//import Dashboard from "./pages/Dashboard";
-//import NavHorizontal
-//import NavVertical
+import { useState } from "react";
+import Dashboard from "./pages/Dashboard";
+import NavHorizontal from "./components/NavHorizontal";
+import NavVertical from "./components/NavVertical";
 
 
 /**

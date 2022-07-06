@@ -1,7 +1,7 @@
-import icon1 from "../assets/incon-1.png"
-import icon2 from "../assets/incon-2.png"
-import icon3 from "../assets/incon-3.png"
-import icon4 from "../assets/incon-4.png"
+import icon1 from "../assets/icon-1.png"
+import icon2 from "../assets/icon-2.png"
+import icon3 from "../assets/icon-3.png"
+import icon4 from "../assets/icon-4.png"
 
 /**
  * function NavVertical returns a div who contains vertical navigation (icons)
