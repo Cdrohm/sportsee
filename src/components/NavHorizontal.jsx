@@ -41,7 +41,7 @@ function NavHorizontal ({ currentUser}) {
 export default NavHorizontal;
 
 //Proptypes part
-NavHorizontal.PropTypes = {
+NavHorizontal.propTypes = {
     currentUser: PropTypes.arrayOf(
         PropTypes.oneOfType([PropTypes.number, PropTypes.func]),
     ),
