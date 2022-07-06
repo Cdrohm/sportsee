@@ -1,5 +1,5 @@
 import logo from "../assets/logo.png";
-import Proptypes from 'prop-types';
+import PropTypes from 'prop-types';
 
 
 /**
@@ -17,10 +17,10 @@ function NavHorizontal ({ currentUser}) {
         <div className="NavH">
         
         <img className="logo"
-                onClick={() => setUserId filter}
+                onClick={() => setUserId(ids.filter((id) => id !== userId)[0])}
                 src={logo}
                 alt="logo Sportsee"
-                title="Click to run demo user" />
+                title="Click to switch user" />
 
                 
         <nav className="NavHBtn">
@@ -40,4 +40,9 @@ function NavHorizontal ({ currentUser}) {
 
 export default NavHorizontal;
 
-//proptypes ?
+//Proptypes part
+NavHorizontal.PropTypes = {
+    currentUser: PropTypes.arrayOf(
+        PropTypes.oneOfType({PropTypes.number, PropTypes.func}),
+    ),
+};
