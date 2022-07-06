@@ -12,25 +12,25 @@ function NavHorizontal ({ currentUser}) {
     const [userId, setUserId] = currentUser;
     const ids = [12, 18];
 
-    //return a div for navigation horizontal (logo + demo switch + links to navigate)
+    //return a div for navigation horizontal (logo + switch user + links to navigate)
     return(
-        <div className="NavH">
+        <div className="Nav-H">
         
-        <img className="logo"
-                onClick={() => setUserId(ids.filter((id) => id !== userId)[0])}
-                src={logo}
-                alt="logo Sportsee"
-                title="Click to switch user" />
+            <img className="logo"
+                    onClick={() => setUserId(ids.filter((id) => id !== userId)[0])}
+                    src={logo}
+                    alt="logo Sportsee"
+                    title="Click to switch user" />
 
+                    
+            <nav className="Nav-H-Btn">
                 
-        <nav className="NavHBtn">
-            
-            <span className="NavHBtn_menu">Accueil</span>
-            <span className="NavHBtn_menu">Profil</span>
-            <span className="NavHBtn_menu">Réglage</span>
-            <span className="NavHBtn_menu">Communauté</span>
+                <span className="Nav-H-Btn_menu">Accueil</span>
+                <span className="Nav-H-Btn_menu">Profil</span>
+                <span className="Nav-H-Btn_menu">Réglage</span>
+                <span className="Nav-H-Btn_menu">Communauté</span>
 
-        </nav>
+            </nav>
 
         </div>
     );
@@ -43,6 +43,6 @@ export default NavHorizontal;
 //Proptypes part
 NavHorizontal.PropTypes = {
     currentUser: PropTypes.arrayOf(
-        PropTypes.oneOfType({PropTypes.number, PropTypes.func}),
+        PropTypes.oneOfType([PropTypes.number, PropTypes.func]),
     ),
 };
