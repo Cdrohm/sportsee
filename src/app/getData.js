@@ -8,6 +8,15 @@ import {
 import PropTypes from "prop-types";
 import axios from "axios";
 
+/**
+ * this async function fetches data from API or mockedData and returns it
+ * @modifiy .env - set mocked data to "true" || "false" in order to use mockedData or axios requests
+ * @param {string} requestTarget it's the data type you want to request from the API
+ * @param {number} userId it's the id of the user you want too get data
+ * @acces localStorage - data fetched are stored in local for a better and quickly acces to the next time
+ * @returns all the data for the selected user
+ */
+
 async function getData (requestTarget, userId) {
     //acces environment variables
     const mockedEnv = process.env.REACT_APP_MOCKED_DATA
