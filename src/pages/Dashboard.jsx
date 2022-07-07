@@ -40,8 +40,10 @@ function Dashboard ({ userId }) {
         $blue: "#4ab8ff",
     };
 
+    //display user name + infos about him
     return (
         <div className="Dashboard">
+            {mainData && (
                 <Fragment>
                     <Header firstname={mainData.userInfos.firstname} />
                     <div className="dashboard_graphs">
@@ -60,6 +62,7 @@ function Dashboard ({ userId }) {
                         ))}
                     </div>
                 </Fragment>
+                )}
         </div>
     );
 
