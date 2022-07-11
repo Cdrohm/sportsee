@@ -1,7 +1,7 @@
 import getData from "../app/getData";
 import Header from "../components/dashboard/Header";
 import Weight from "../components/dashboard/Weight";
-import Objective from "../components/dashboard/Objective";
+import Duration from "../components/dashboard/Duration";
 import Radar from "../components/dashboard/Radar";
 import Score from "../components/dashboard/Score";
 import Counter from "../components/dashboard/Counter";
@@ -48,7 +48,7 @@ function Dashboard ({ userId }) {
                     <Header firstname={mainData.userInfos.firstname} />
                     <div className="dashboard_graphs">
                         <Weight userId={userId} color={color} />
-                        <Objective userId={userId} color={color} />
+                        <Duration userId={userId} color={color} />
                         <Radar userId={userId} color={color} />
                         <Score userScore={score} color={color} />
 
