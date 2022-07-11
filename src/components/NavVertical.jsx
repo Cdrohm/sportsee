@@ -13,10 +13,10 @@ function NavVertical () {
     return (
         <div className="Nav-V">
             <div className="Nav-V-Menu_btns">
-                <div className="Nav-V-Menu_btns_icon"><img src={icon1} alt="btn mode" /></div>
-                <div className="Nav-V-Menu_btns_icon"><img src={icon2} alt="btn mode" /></div>
-                <div className="Nav-V-Menu_btns_icon"><img src={icon3} alt="btn mode" /></div>
-                <div className="Nav-V-Menu_btns_icon"><img src={icon4} alt="btn mode" /></div>
+                <div className="Nav-V-Menu_btns_icon"><img src={icon1} alt="button mode" /></div>
+                <div className="Nav-V-Menu_btns_icon"><img src={icon2} alt="button mode" /></div>
+                <div className="Nav-V-Menu_btns_icon"><img src={icon3} alt="button mode" /></div>
+                <div className="Nav-V-Menu_btns_icon"><img src={icon4} alt="button mode" /></div>
             </div>
             <div className="copyright">Copyright, Sportsee 2020</div>
         </div>

@@ -1,0 +1,26 @@
+.Nav-H {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 90px;
+    width: 100vw;
+    color: white;
+    background-color: black;
+    .logo {
+        height: 60%;
+        padding: 20px;
+    }
+    .Nav-H-Btn {
+        display: flex;
+        justify-content: space-around;
+        flex: 1;
+
+        .Nav-H-Btn_menu {
+            font-size: 2vw;
+            font-weight: 500;
+            &:hover {
+                @include btn_text_over;
+            }
+        }
+    }
+}

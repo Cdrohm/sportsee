@@ -17,14 +17,20 @@ import axios from "axios"
  */
 
 async function getData(requestTarget, userId) {
+
     console.log(getData);
+    //create mock
     const mockedEnv = process.env.REACT_APP_MOCKED_DATA
+    console.log(mockedEnv);
+
     const mockedData = {
         USER_MAIN_DATA: USER_MAIN_DATA,
         USER_ACTIVITY: USER_ACTIVITY,
         USER_AVERAGE_SESSIONS: USER_AVERAGE_SESSIONS,
         USER_PERFORMANCE: USER_PERFORMANCE
     }
+    console.log(mockedData);
+    console.log(process.env);
     const apiURL = process.env[`REACT_APP_API_URL`]
     const apiTarget = process.env[`REACT_APP_${requestTarget}`].replace(/userId/, userId)
     let usersData, data
