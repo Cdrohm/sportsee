@@ -1,0 +1,40 @@
+.Nav-V {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+	width: 20vw;
+    max-width: 100px;
+    color: white;
+	background-color: black;
+}
+.Nav-V-Menu_btns {
+	display: flex;
+	flex-direction: column;
+    padding-top: 10%;
+    align-items: center;
+	.Nav-V-Menu_btns_icon {
+        display: block;
+        margin: 10px;
+		width: 70%;
+		height: 0;
+        padding-bottom: 70%;
+		border-radius: 5%;
+		background-color: white;
+        img {
+            margin: 10%;
+            width: 80%;
+        }
+        &:hover img {
+            cursor: pointer;
+            transform: scale(1.8);
+            transition: 0.3s;
+            box-shadow: 0 0 10px rgba(255, 255, 255, 0.7);
+        }
+	}
+}
+.copyright {
+    transform: rotate(-90deg);
+    font-size: 15px;
+    white-space: nowrap;
+}
