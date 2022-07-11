@@ -63,6 +63,23 @@ function Duration ({ userId, color}) {
 		return <div>waiting for data</div>;
 	}
 
+	function CustomCursor (props) {
+		if (props) {
+			const {points, width, height} = props;
+			const {x, y} = points[0];
+
+			return (
+				<Rectangle
+					fill={color.red}
+					x={x}
+					y={y-30}
+					width={width}
+					height={height*2}
+				/>	
+			);
+		}
+		return <div>wainting for data</div>
+	}
 	return (
 		<div className="Duration">
 			{data && (
@@ -126,7 +143,7 @@ function Duration ({ userId, color}) {
 								margin={{left: 20}}
 							/>
 
-							<line
+							<Line
 								type="natural"
 								dataKey="sessionLength"
 								scale="band"
