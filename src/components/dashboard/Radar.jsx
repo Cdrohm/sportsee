@@ -80,7 +80,7 @@ function RadarGraph ({userId, color}) {
 	 * @param {array} payload - Properties used by the Tooltip
 	 * @returns A custom-tooltip with a style of background, padding and color
 	 */
-    function CustomeTooltip ({active, payload}) {
+    function CustomTooltip ({active, payload}) {
         if (active && payload && payload.length) {
             return (
                 <div className="custom-tooltip" style={{ background: "white", padding: "10px 5px", color: color.red}}
@@ -90,5 +90,52 @@ function RadarGraph ({userId, color}) {
                 </div>
             );
         }
+
+        return <div>waiting for data</div>
     }
+
+    return (
+        <div className="Radar">
+            {modelData && (
+                <ResponsiveContainer width="100%" height="100%">
+                    <RadarChart data= {modelData} margin={{top: 30, bottom: 30, left: 30, right: 30}}>
+                    <PolarGrid radialLines={false} />
+						<PolarAngleAxis
+							dataKey="key"
+							tick={setTick}
+							tickLine={false}
+						/>
+						<PolarRadiusAxis
+							angle={30}
+							type="number"
+							tick={false}
+							axisLine={false}
+							tickCount="6"
+							line="0"
+						/>
+						<Radar
+							dataKey="value"
+							fill={color.red}
+							fillOpacity={0.6}
+							animationEasing={"ease-out"}
+							stroke="none"
+						/>
+						<Tooltip
+							content={<CustomTooltip />}
+							animationEasing="ease-out"
+							active
+						/>
+                    </RadarChart>
+                </ResponsiveContainer>
+            )}
+        </div>
+    );
 }
+
+export default RadarGraph;
+
+//Proptypes
+RadarGraph.propTypes = {
+	userId: PropTypes.number.isRequired,
+	color: PropTypes.object.isRequired
+};
