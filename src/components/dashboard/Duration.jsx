@@ -14,9 +14,10 @@ import {
 } from "recharts";
 
 /**
- * 
- * @param {number} userId / 
+ * Function to display the duration of dayly exercices
+ * @param {number} userId / to take the user name
  * @param {string} color / colors used in dashboard page
+ * @returns a table comprising curved line summarizing the exercise duration for the week
  */
 function Duration ({ userId, color}) {
     //react use*
@@ -32,11 +33,22 @@ function Duration ({ userId, color}) {
     }, [userId]);
 
 
+	/**
+	 * Function returns the day following the given number
+	 * @param {number} num 
+	 * @returns the day with its 1st letter
+	 */
+
     function weekDays(num) {
         const week = ["L", "M", "M", "J", "V", "S", "D"];
         return week[+num - 1];
     }
 
+	/**
+	 * Function is a react component which allows to create a tooltip
+	 * @param {array} payload / array of objects present the custom tooltip
+	 * @returns a custom tooltip with a style
+	 */
     function CustomTooltip({ payload }) {
 		if (payload && payload.length) {
 			return (
@@ -48,6 +60,97 @@ function Duration ({ userId, color}) {
 				</div>
 			);
 		}
-		return <div>... waiting for data</div>;
+		return <div>waiting for data</div>;
 	}
+
+	return (
+		<div className="Duration">
+			{data && (
+				//recharts
+				<ResponsiveContainer width="100%" height="100%">
+					<LineChart data={data}
+						margin={{
+							top: 30,
+							right: 0,
+							left: 0,
+							bottom: 30,
+						}}>
+
+							<CartesianGrid vertical={false} horizontal={false} />
+							<Tooltip
+								content={<CustomTooltip />}
+								animationEasing="easing-out"
+								cursor={<CustomCursor />}
+							/>
+
+							<XAxis
+								dataKey="day"
+								tickFormatter={weekDays}
+								tick={{ fill: "white", opacity: ".6"}}
+								tickLine={false}
+								tickMargin={15}
+								interval="preserveStartEnd"
+								axisLine={false}
+							/>
+
+							<YAxis
+								padding={{ top:0, bottom: 0}}
+								type="number"
+								domain={["dataMin -10", "dataMax +10"]}
+								allowDataOverflow={true}
+								tickLine={false}
+								axisLine={false}
+								tickMargin={0}
+								hide
+							/>
+
+							<Legend
+								verticalAlign="top"
+								align="left"
+								iconSize={0}
+								content={() => {
+									<div className="legend_text"
+									style={{
+										color:"white",
+										marginTop: "-10px",
+										marginLeft:"20px",
+										opacity: ".5",
+										position:"absolute",
+										top:"0",
+									}}
+									>
+										Durée moyenne des <br />
+										sessions
+									</div>
+								}}	
+								margin={{left: 20}}
+							/>
+
+							<line
+								type="natural"
+								dataKey="sessionLength"
+								scale="band"
+								stroke="white"
+								strokeWidth={2}
+								dot={false}
+								activeDot={{
+									fill: "white",
+									strokeOpacity: ".5",
+									strokeWidth: "10",
+									r: 4,
+								}}	
+							/>		
+						</LineChart>
+				</ResponsiveContainer>
+			)}
+		</div>
+	);
 }
+
+export default Duration;
+
+//Proptypes
+Duration.propTypes = {
+	userId: PropTypes.number.isRequired,
+	color: PropTypes.object.isRequired
+};
