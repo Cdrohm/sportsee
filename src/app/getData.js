@@ -11,7 +11,7 @@ import axios from "axios"
  * this async function fetches data from API or mockedData and returns it
  * @modifiy .env - set mocked data to "true" || "false" in order to use mockedData or axios requests
  * @param {string} requestTarget it's the data type you want to request from the API
- * @param {number} userId it's the id of the user you want too get data
+ * @param {number} userId it's the id of the user you want to get data
  * @acces localStorage - data fetched are stored in local for a better and quickly acces to the next time
  * @returns all the data for the selected user
  */
@@ -32,7 +32,7 @@ async function getData(requestTarget, userId) {
     console.log(mockedData);
     console.log(process.env);
     const apiURL = process.env[`REACT_APP_API_URL`]
-    console.log(process.env[`"REACT_APP_$i=test$i"`]);
+    //console.log(process.env[`"REACT_APP_$i=test$i"`]);
     const apiTarget = process.env[`REACT_APP_${requestTarget}`].replace(/userId/, userId)
     let usersData, data
 
