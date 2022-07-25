@@ -20,7 +20,7 @@ import {
  * @returns a table comprising curved line summarizing the exercise duration for the week
  */
 function Duration ({ userId, color}) {
-    //react use*
+    //react useState
     const [data, setData] = useState();
 
     //Fecth of Data (session) for each userId change

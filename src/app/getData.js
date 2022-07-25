@@ -21,7 +21,6 @@ async function getData(requestTarget, userId) {
     console.log(requestTarget);
     //create mock
     const mockedEnv = process.env.REACT_APP_MOCKED_DATA
-    console.log(mockedEnv);
 
     const mockedData = {
         USER_MAIN_DATA: USER_MAIN_DATA,
@@ -29,31 +28,37 @@ async function getData(requestTarget, userId) {
         USER_AVERAGE_SESSIONS: USER_AVERAGE_SESSIONS,
         USER_PERFORMANCE: USER_PERFORMANCE
     }
-    console.log(mockedData);
-    console.log(process.env);
+    //console.log(process.env);
     const apiURL = process.env[`REACT_APP_API_URL`]
-    //console.log(process.env[`"REACT_APP_$i=test$i"`]);
     const apiTarget = process.env[`REACT_APP_${requestTarget}`].replace(/userId/, userId)
     let usersData, data
 
     try {
-        if (localStorage.getItem(`sportSee-${userId}-${requestTarget}`)) {
+        if (localStorage.getItem(`sportsee-${userId}-${requestTarget}`)) {
+
             console.log('Data is taken from your localStorage.')
             data = JSON.parse(localStorage.getItem(`sportSee-${userId}-${requestTarget}`))
+            //console.log(localStorage);
         } else {
             console.log(`Data is taken from ${mockedEnv === "true" ? "MOCKED_DATA" : "BackEnd database with Axios"}.`)
             if (mockedEnv === 'true') {
                 usersData = await new Promise((resolve) => resolve(mockedData[requestTarget]))
+                console.log(usersData);
+
                 data = { data: await usersData.filter(user => user.id ? user.id === userId : user.userId === userId)[0] }
                 localStorage.setItem(`sportSee-${userId}-${requestTarget}`, JSON.stringify(data))
             } else {
                 try {
+                    console.log(apiURL);
+                    console.log(requestTarget);
+                    console.log(usersData);
                     usersData = await axios({
                         method: 'get',
                         baseURL: apiURL,
                         url: apiTarget,
                         responseType: "stream"
                     })
+                    //console.log(usersData);
                     data = await usersData.data
                     localStorage.setItem(`sportSee-${userId}-${requestTarget}`, JSON.stringify(data))
                 } catch (error) {
