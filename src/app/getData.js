@@ -45,7 +45,9 @@ async function getData(requestTarget, userId) {
                 usersData = await new Promise((resolve) => resolve(mockedData[requestTarget]))
                 console.log(usersData);
 
-                data = { data: await usersData.filter(user => user.id ? user.id === userId : user.userId === userId)[0] }
+                data = {
+                    data: await usersData.filter(user => user.id ? user.id === userId : user.userId === userId)[0]
+                }
                 localStorage.setItem(`sportSee-${userId}-${requestTarget}`, JSON.stringify(data))
             } else {
                 try {

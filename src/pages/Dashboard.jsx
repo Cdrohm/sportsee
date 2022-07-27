@@ -41,7 +41,7 @@ function Dashboard ({ userId }) {
     };
 
     //display user name + infos about him
-    return (
+    return(
         <div className="Dashboard">
             {mainData && (
                 <Fragment>

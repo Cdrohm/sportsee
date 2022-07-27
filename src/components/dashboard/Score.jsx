@@ -8,7 +8,7 @@ function Score ({ userScore, color}) {
         {name: "score", value: userScore, stroke: 'red'},
     ];
 
-    return (
+    return(
         <div className="Score">
             <ResponsiveContainer width="100%" height="100%">
                 <PieChart margin={{ top: 10, bottom: 10 }}>

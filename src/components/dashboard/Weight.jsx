@@ -88,7 +88,7 @@ function Weight ({ userId, color}) {
 		return <div>waiting for data</div>;
 	}
 
-	return (
+	return(
 		<div className="Weight">
 			{dates && (
 				<ResponsiveContainer width="100%" height="100%">

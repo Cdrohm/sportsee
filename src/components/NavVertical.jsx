@@ -10,7 +10,7 @@ import icon4 from "../assets/icon-4.png"
  * the copyright is inside a div
  */
 function NavVertical () {
-    return (
+    return(
         <div className="Nav-V">
             <div className="Nav-V-Menu_btns">
                 <div className="Nav-V-Menu_btns_icon"><img src={icon1} alt="button mode" /></div>

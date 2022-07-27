@@ -5,7 +5,10 @@ import hamburger from "../../assets/hamburger.svg";
 import chicken from "../../assets/chicken.svg";
 import fire from "../../assets/fire.svg";
 
-function Counter ({data, i}) {
+function Counter({
+    data,
+    i
+}) {
     let [type, value] = data;
     value = +value > 999 ? `${Math.floor(value / 1000)}, ${value - 1000}` : value;
 
@@ -28,18 +31,18 @@ function Counter ({data, i}) {
     //color
     const colors = {
         calorieCount: "#ffe6e6",
-		proteinCount: "#DBECFF",
-		carbohydrateCount: "#fff5cc",
-		lipidCount: "#ffe6f9",
+        proteinCount: "#DBECFF",
+        carbohydrateCount: "#fff5cc",
+        lipidCount: "#ffe6f9",
     };
 
     //unit naming
     const units = {
-		calorieCount: "kCal",
-		proteinCount: "g",
-		carbohydrateCount: "g",
-		lipidCount: "g",
-	};
+        calorieCount: "kCal",
+        proteinCount: "g",
+        carbohydrateCount: "g",
+        lipidCount: "g",
+    };
 
     const title = types[type];
     const icon = icons[type];
@@ -70,14 +73,14 @@ export default Counter;
 Counter.propTypes = {
     data: PropTypes.arrayOf(
         PropTypes.oneOfType([
-        PropTypes.oneOf([
+            PropTypes.oneOf([
                 "calorieCount",
-				"proteinCount",
-				"carbohydrateCount",
-				"lipidCount",
-        ]),
-        PropTypes.number
-    ])
+                "proteinCount",
+                "carbohydrateCount",
+                "lipidCount",
+            ]),
+            PropTypes.number
+        ])
     ).isRequired,
     i: PropTypes.string.isRequired,
 };

@@ -78,9 +78,9 @@ function Duration ({ userId, color}) {
 				/>	
 			);
 		}
-		return <div>wainting for data</div>
+		return <div>waiting for data</div>
 	}
-	return (
+	return(
 		<div className="Duration">
 			{data && (
 				//recharts
