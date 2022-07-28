@@ -55,16 +55,22 @@ async function getData(requestTarget, userId) {
                     console.log(requestTarget);
                     console.log(usersData);
                     usersData = await axios({
+
                         method: 'get',
                         baseURL: apiURL,
                         url: apiTarget,
                         responseType: "stream"
                     })
+
                     //console.log(usersData);
+                    //throw new Error("ici");
+
                     data = await usersData.data
+
                     localStorage.setItem(`sportSee-${userId}-${requestTarget}`, JSON.stringify(data))
                 } catch (error) {
                     console.log('Erreur axios:', error)
+
                 }
             }
         }
