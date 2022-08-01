@@ -67,8 +67,6 @@ function Counter({
     );
 }
 
-export default Counter;
-
 //Proptypes
 Counter.propTypes = {
     data: PropTypes.arrayOf(
@@ -84,3 +82,6 @@ Counter.propTypes = {
     ).isRequired,
     i: PropTypes.string.isRequired,
 };
+
+export default Counter;
+

@@ -135,6 +135,7 @@ function RadarGraph({
 							fillOpacity={0.6}
 							animationEasing={"ease-out"}
 							stroke="none"
+                            cglcol="red"
 						/>
 						<Tooltip
 							content={<CustomTooltip />}
@@ -148,10 +149,11 @@ function RadarGraph({
     );
 }
 
-export default RadarGraph;
-
 //Proptypes
 RadarGraph.propTypes = {
     userId: PropTypes.number.isRequired,
     color: PropTypes.object.isRequired
 };
+
+export default RadarGraph;
+

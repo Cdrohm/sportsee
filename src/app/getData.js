@@ -44,6 +44,7 @@ async function getData(requestTarget, userId) {
             if (mockedEnv === 'true') {
                 usersData = await new Promise((resolve) => resolve(mockedData[requestTarget]))
                 console.log(usersData);
+                console.log(data);
 
                 data = {
                     data: await usersData.filter(user => user.id ? user.id === userId : user.userId === userId)[0]
@@ -53,7 +54,7 @@ async function getData(requestTarget, userId) {
                 try {
                     console.log(apiURL);
                     console.log(requestTarget);
-                    console.log(usersData);
+                    //console.log(usersData);
                     usersData = await axios({
 
                         method: 'get',
@@ -62,10 +63,10 @@ async function getData(requestTarget, userId) {
                         responseType: "stream"
                     })
 
-                    //console.log(usersData);
+                    console.log(usersData);
                     //throw new Error("ici");
 
-                    data = await usersData.data
+                    data = usersData.data
 
                     localStorage.setItem(`sportSee-${userId}-${requestTarget}`, JSON.stringify(data))
                 } catch (error) {
@@ -82,10 +83,11 @@ async function getData(requestTarget, userId) {
 
 }
 
-export default getData;
-
-
 getData.proptype = {
     requestTarget: PropTypes.oneOf(['USER_MAIN_DATA', 'USER_ACTIVITY', 'USER_AVERAGE_SESSIONS', 'USER_PERFORMANCE']).isRequired,
     userId: PropTypes.number.isRequired,
 }
+
+export default getData;
+
+

@@ -50,7 +50,7 @@ function Dashboard ({ userId }) {
                         <Weight userId={userId} color={color} />
                         <Duration userId={userId} color={color} />
                         <Radar userId={userId} color={color} />
-                        <Score userScore={score} color={color} />
+                        <Score userScore={score} color={color} /> 
 
                         {Object.keys(mainData.keyData).map((val, i) => (
                             <Counter
@@ -62,16 +62,17 @@ function Dashboard ({ userId }) {
                         ))}
                     </div>
                 </Fragment>
-                )}
+                        )}
         </div>
     );
 
 }
-
-export default Dashboard;
 
 //Proptypes
 
 Dashboard.propTypes = {
     userId: PropTypes.number.isRequired,
 };
+
+export default Dashboard;
+

@@ -125,7 +125,7 @@ function Duration ({ userId, color}) {
 								verticalAlign="top"
 								align="left"
 								iconSize={0}
-								content={() => {
+								content={
 									<div className="legend_text"
 									style={{
 										color:"white",
@@ -139,9 +139,9 @@ function Duration ({ userId, color}) {
 										Durée moyenne des <br />
 										sessions
 									</div>
-								}}	
+								}	
 								margin={{left: 20}}
-							/>
+							/>	
 
 							<Line
 								type="natural"
@@ -156,7 +156,7 @@ function Duration ({ userId, color}) {
 									strokeWidth: "10",
 									r: 4,
 								}}	
-							/>		
+							/>	
 						</LineChart>
 				</ResponsiveContainer>
 			)}
@@ -164,10 +164,11 @@ function Duration ({ userId, color}) {
 	);
 }
 
-export default Duration;
-
 //Proptypes
 Duration.propTypes = {
 	userId: PropTypes.number.isRequired,
 	color: PropTypes.object.isRequired
 };
+
+export default Duration;
+
