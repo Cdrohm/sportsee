@@ -146,6 +146,7 @@
 .legend_text {
   font-size: 1.2vw;
   font-weight: 400;
+  color: black;
 }
 
 .dashboard_graphs {
@@ -240,9 +241,6 @@
 }
 
 .Counter .counter_icon_cell {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
   -webkit-box-pack: center;
       -ms-flex-pack: center;
           justify-content: center;

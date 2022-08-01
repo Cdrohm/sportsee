@@ -26,6 +26,7 @@
 .legend_text {
 	font-size: 1.2vw;
 	font-weight: 400;
+	color: black;
 }
 
 .dashboard_graphs {
@@ -93,7 +94,7 @@
 	padding: 10%;
 
 	.counter_icon_cell {
-		display: flex;
+		//display: flex;
 		justify-content: center;
 		align-items: center;
 		width: 35%;

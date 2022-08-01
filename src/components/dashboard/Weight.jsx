@@ -78,7 +78,7 @@ function Weight ({ userId, color}) {
 			return (
 				<div
 					className="custom-tooltip"
-					style={{ background: color.red, padding: "5px 5px", color: "white" }}
+					style={{ background: color.$red, padding: "5px 5px", color: "white" }}
 				>
 					<p className="desc">{payload[0].payload.kilogram} Kg</p>
 					<p className="desc">{payload[1].payload.calories} kCal</p>
@@ -147,14 +147,14 @@ function Weight ({ userId, color}) {
 							yAxisId="kilogram"
 							dataKey="kilogram"
 							radius={[20, 20, 0, 0]}
-							fill={color.dark_grey}
+							fill={color.$dark_grey}
 						/>
 
 						<Bar
 							yAxisId="calories"
 							dataKey="calories"
 							radius={[20, 20, 0, 0]}
-							fill={color.red}
+							fill={color.$red}
 						/>
 
 					</BarChart>
