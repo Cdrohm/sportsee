@@ -70,7 +70,8 @@ function Duration ({ userId, color}) {
 
 			return (
 				<Rectangle
-					fill={color.red}
+					fill={color.$black}
+					fillOpacity="0.2"
 					x={x}
 					y={y-30}
 					width={width}

@@ -55,7 +55,7 @@ function Weight ({ userId, color}) {
 					style={{
 						position: "absolute",
 						left: "0",
-						color: color.dark_grey,
+						color: color.$dark_grey,
 					}}
 				>
 					Activité quotidienne
@@ -78,7 +78,7 @@ function Weight ({ userId, color}) {
 			return (
 				<div
 					className="custom-tooltip"
-					style={{ background: color.$red, padding: "5px 5px", color: "white" }}
+					style={{ background: color.$red, padding: "5px 5px", color: "white", stroke: "none" }}
 				>
 					<p className="desc">{payload[0].payload.kilogram} Kg</p>
 					<p className="desc">{payload[1].payload.calories} kCal</p>
