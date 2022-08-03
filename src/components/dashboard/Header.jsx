@@ -9,7 +9,7 @@ import PropTypes from "prop-types";
  function Header({ firstName }) {
 	return (
 		<div className="Header">
-			<h1>Bonjour <span className="name" data-testid="firstname">{firstName}</span></h1>
+			<h1>Bonjour <span className="name" data-testid="firstName">{firstName}</span></h1>
 			<p>Félicitations! Vous avez explosé vos objectifs hier 👏</p>
 		</div>
 	);
