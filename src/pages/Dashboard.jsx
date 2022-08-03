@@ -40,12 +40,13 @@ function Dashboard ({ userId }) {
         $blue: "#4ab8ff",
     };
 
+    
     //display user name + infos about him
     return(
         <div className="Dashboard">
             {mainData && (
                 <Fragment>
-                    <Header firstname={mainData.userInfos.firstname} />
+                    <Header firstName={mainData.userInfos.firstName} />
                     <div className="dashboard_graphs">
                         <Weight userId={userId} color={color} />
                         <Duration userId={userId} color={color} />

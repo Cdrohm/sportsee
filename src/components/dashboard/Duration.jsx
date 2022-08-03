@@ -122,27 +122,29 @@ function Duration ({ userId, color}) {
 								hide
 							/>
 
-							<Legend
-								verticalAlign="top"
-								align="left"
-								iconSize={0}
-								content={
-									<div className="legend_text"
+						<Legend
+							verticalAlign="top"
+							align="left"
+							iconSize={0}
+							content={() => (
+								<div
+									className="legend_text"
 									style={{
-										color:"white",
+										color: "white",
 										marginTop: "-10px",
-										marginLeft:"20px",
+										marginLeft: "20px",
 										opacity: ".5",
-										position:"absolute",
-										top:"0",
+										position: "absolute",
+										top: "0",
 									}}
-									>
-										Durée moyenne des <br />
-										sessions
-									</div>
-								}	
-								margin={{left: 20}}
-							/>	
+								>
+									Durée moyenne des
+									<br />
+									sessions
+								</div>
+							)}
+							margin={{ left: 20 }}
+						/>	
 
 							<Line
 								type="natural"
