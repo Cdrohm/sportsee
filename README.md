@@ -53,7 +53,7 @@ Download this respository:
 
 `yarn install`
 
-""" 2. Lacunh the application
+### 2. Lacunh the application
 
 `yarn start`
 
