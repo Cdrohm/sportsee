@@ -131,7 +131,7 @@ function RadarGraph({
 						/>
 						<Radar
 							dataKey="value"
-							fill={color.red}
+							fill={color.$red}
 							fillOpacity={0.6}
 							animationEasing={"ease-out"}
 							stroke="none"

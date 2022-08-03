@@ -3,12 +3,7 @@ import { render, screen } from '@testing-library/react';
 import { unmountComponentAtNode } from "react-dom";
 import App from '../App';
 import Header from '../components/dashboard/Header';
-// import Weight from '../components/dashboard/Weight';
-// import Duration from '../components/dashboard/Duration';
-// import Radar from '../components/dashboard/Radar';
-// import Score from '../components/dashboard/Score';
-// import Counter from '../components/dashboard/Counter';
-import mockedData from '../assets/mockedData/data';
+import mockedData from '../assets/mockData/data';
 import { act } from 'react-dom/test-utils';
 
 
