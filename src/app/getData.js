@@ -18,7 +18,6 @@ import axios from "axios"
 
 async function getData(requestTarget, userId) {
 
-    console.log(requestTarget);
     //create mock
     const mockedEnv = process.env.REACT_APP_MOCKED_DATA
 
@@ -28,7 +27,7 @@ async function getData(requestTarget, userId) {
         USER_AVERAGE_SESSIONS: USER_AVERAGE_SESSIONS,
         USER_PERFORMANCE: USER_PERFORMANCE
     }
-    console.log(process.env);
+   
     const apiURL = process.env[`REACT_APP_API_URL`]
     const apiTarget = process.env[`REACT_APP_${requestTarget}`].replace(/userId/, userId)
     let usersData, data
@@ -40,21 +39,16 @@ async function getData(requestTarget, userId) {
             data = JSON.parse(localStorage.getItem(`sportSee-${userId}-${requestTarget}`))
             //console.log(localStorage);
         } else {
-            console.log(`Data is taken from ${mockedEnv === "true" ? "MOCKED_DATA" : "BackEnd database with Axios"}.`)
+            //console.log(`Data is taken from ${mockedEnv === "true" ? "MOCKED_DATA" : "BackEnd database with Axios"}.`)
             if (mockedEnv === 'true') {
                 usersData = await new Promise((resolve) => resolve(mockedData[requestTarget]))
-                console.log(usersData);
-                console.log(data);
-
+                
                 data = {
                     data: await usersData.filter(user => user.id ? user.id === userId : user.userId === userId)[0]
                 }
                 localStorage.setItem(`sportSee-${userId}-${requestTarget}`, JSON.stringify(data))
             } else {
                 try {
-                    console.log(apiURL);
-                    console.log(requestTarget);
-                    //console.log(usersData);
                     usersData = await axios({
 
                         method: 'get',
@@ -63,12 +57,9 @@ async function getData(requestTarget, userId) {
                         responseType: "stream"
                     })
 
-                    console.log(usersData);
-                    //throw new Error("ici");
-
                     data = usersData.data
-
                     localStorage.setItem(`sportSee-${userId}-${requestTarget}`, JSON.stringify(data))
+
                 } catch (error) {
                     console.log('Erreur axios:', error)
 
