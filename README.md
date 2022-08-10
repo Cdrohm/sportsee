@@ -1,8 +1,8 @@
 # Presentation
 SportSee is a startup dedicated to sports coaching. In full growth, the company will today launch a new version of the user profile page. The goal is to redo the profile page with React.
 
-[![forthebadge](./made-with-create-react-app.svg)](https://create-react-app.dev/)
-[![forthebadge](./uses-recharts.svg)](https://recharts.org/en-US/)
+#### made with REACT
+#### Uses RECHARTS and AXIOS
 
 # Getting Started with Create React App
 
