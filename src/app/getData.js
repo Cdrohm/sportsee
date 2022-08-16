@@ -37,9 +37,8 @@ async function getData(requestTarget, userId) {
 
             console.log('Data is taken from your localStorage.')
             data = JSON.parse(localStorage.getItem(`sportSee-${userId}-${requestTarget}`))
-            //console.log(localStorage);
         } else {
-            //console.log(`Data is taken from ${mockedEnv === "true" ? "MOCKED_DATA" : "BackEnd database with Axios"}.`)
+           // console.log(`Data is taken from ${mockedEnv === "true" ? "MOCKED_DATA" : "BackEnd database with Axios"}.`)
             if (mockedEnv === 'true') {
                 usersData = await new Promise((resolve) => resolve(mockedData[requestTarget]))
                 
@@ -62,7 +61,7 @@ async function getData(requestTarget, userId) {
 
                 } catch (error) {
                     console.log('Erreur axios:', error)
-
+                    alert('Une erreur est survenue lors du chargement des données... 🙃')
                 }
             }
         }
